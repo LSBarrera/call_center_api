@@ -1,0 +1,5 @@
+[client]
+database = db_api_django
+user = root
+password = 22209589
+default-character-set = utf8

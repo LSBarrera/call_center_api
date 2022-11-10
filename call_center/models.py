@@ -2,7 +2,7 @@ from django.db import models
 
 class Orden(models.Model):
     id_order = models.IntegerField(default=0,null=False,unique=True)
-    name = models.CharField(max_length=250,null=True)
+    name = models.CharField(verbose_name='Cliente',max_length=250,null=True)
     Descuentopociento = models.IntegerField(default=0)
     cobrarimpuesto = models.BooleanField(default=False)
     propina = models.BooleanField(default=False)
@@ -15,7 +15,7 @@ class Orden(models.Model):
     DescuentoLibre = models.BooleanField(default=False)
     DescuentoCortesia = models.BooleanField(default=False)
     ValueNITClient = models.CharField(max_length=255,null=True)
-    DirClient = models.CharField(max_length=255,null=True)
+    DirClient = models.CharField(verbose_name='Dirección',max_length=255,null=True)
     TotalSubsidio = models.DecimalField(max_digits=15, decimal_places=2, default=0)
     QuitarSubsidio = models.BooleanField(default=False)
     EsPorCuentaPendiente = models.BooleanField(default=False)

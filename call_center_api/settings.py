@@ -1,4 +1,4 @@
-import pymysql
+import pymysql, os
 pymysql.install_as_MySQLdb()
 
 """
@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gi4oj1j@)uigqwi1)_!qeef5)=)8*&=so%9zq*#7@qlw$vh+2q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["localhost","192.168.0.2"]
 

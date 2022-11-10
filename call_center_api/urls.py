@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf import settings
+from django.conf import urls
+from django.views.static import serve
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('call_center/', include('call_center.urls'))

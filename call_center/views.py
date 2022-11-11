@@ -104,7 +104,9 @@ def insertar(request):
     TotalRedemptionsAvailablePerUser = request.POST.get('TotalRedemptionsAvailablePerUser')
     cliente = request.POST.get('cliente')
     empleado = request.POST.get('empleado')
+    telefono_cliente = request.POST.get('telefono_cliente')
     detalles = request.POST.get('detalles')
+    nota = request.POST.get('nota')
     sucursal = request.POST.get('sucursal')
 
     try:
@@ -162,7 +164,9 @@ def insertar(request):
         orden.TotalRedemptionsAvailablePerUser = TotalRedemptionsAvailablePerUser
         orden.cliente = cliente
         orden.empleado = empleado
+        orden.telefono_cliente = telefono_cliente
         orden.detalles = detalles
+        orden.nota = nota
         orden.sucursal = sucursal
 
         orden.save()
@@ -197,16 +201,61 @@ def ordenes(request):
         for o in ordenes:
             arr = {
                 'Id':o.id,
-                'IdOrder':o.id_order,
-                'Empleado':o.empleado,
-                'Cliente':o.cliente,
-                'Descuento':o.descuento,
-                'Impuesto':o.impuesto,
-                'Propina':o.propina,
-                'ValorExtra':o.valor_extra,
-                'Nit':o.nit,
-                'Direccion':o.direccion,
-                'Detalles':o.detalles
+                'id_order':o.id_order,
+                'name':o.name,
+                'Descuentopociento':o.Descuentopociento,
+                'cobrarimpuesto':o.cobrarimpuesto,
+                'propina':o.propina,
+                'SaldoCliente':o.SaldoCliente,
+                'CobrarValorExtra':o.CobrarValorExtra,
+                'NombreClientePrepago':o.NombreClientePrepago,
+                'CantPersonas':o.CantPersonas,
+                'DescuentoEspecial':o.DescuentoEspecial,
+                'DescuentoEn':o.DescuentoEn,
+                'DescuentoLibre':o.DescuentoLibre,
+                'DescuentoCortesia':o.DescuentoCortesia,
+                'ValueNITClient':o.ValueNITClient,
+                'DirClient':o.DirClient,
+                'TotalSubsidio':o.TotalSubsidio,
+                'QuitarSubsidio':o.QuitarSubsidio,
+                'EsPorCuentaPendiente':o.EsPorCuentaPendiente,
+                'TipoOrden':o.TipoOrden,
+                'IDOrdenCE':o.IDOrdenCE,
+                'TipoEstadoCE':o.TipoEstadoCE,
+                'TotalMontoDelivery':o.TotalMontoDelivery,
+                'EsNuevaCE':o.EsNuevaCE,
+                'Notas':o.Notas,
+                'Payment_ID_CE':o.Payment_ID_CE,
+                'Delivery_Address_ID_CE':o.Delivery_Address_ID_CE,
+                'Driver_ID_CE':o.Driver_ID_CE,
+                'Driver_ID_EW':o.Driver_ID_EW,
+                'Want_FE_CE':o.Want_FE_CE,
+                'Document_Type_ID_FE_CE':o.Document_Type_ID_FE_CE,
+                'Document_ID_FE_CE':o.Document_ID_FE_CE,
+                'Email_Client_FE_CE':o.Email_Client_FE_CE,
+                'Email_Client_CE':o.Email_Client_CE,
+                'Telefono_Client_CE':o.Telefono_Client_CE,
+                'Nombre_Mesa_CE':o.Nombre_Mesa_CE,
+                'Mesa_ID_CE':o.Mesa_ID_CE,
+                'MetodoPago_CE':o.MetodoPago_CE,
+                'TipoConsumoCE':o.TipoConsumoCE,
+                'CobrarDeliveryCE':o.CobrarDeliveryCE,
+                'Eliminada_CE':o.Eliminada_CE,
+                'Eliminada_Aplicada_CE':o.Eliminada_Aplicada_CE,
+                'orden_impresa':o.orden_impresa,
+                'CuponWeb':o.CuponWeb,
+                'retencion':o.retencion,
+                'TypeCoupon':o.TypeCoupon,
+                'Coupons_Real_Value':o.Coupons_Real_Value,
+                'Coupons_Perceived_Value':o.Coupons_Perceived_Value,
+                'Client_IntegrationCode':o.Client_IntegrationCode,
+                'TotalRedemptionsAvailablePerCoupon':o.TotalRedemptionsAvailablePerCoupon,
+                'TotalRedemptionsAvailablePerUser':o.TotalRedemptionsAvailablePerUser,
+                'cliente':o.cliente,
+                'empleado':o.empleado,
+                'telefono_cliente':o.telefono_cliente,
+                'detalles':o.detalles,
+                'nota':o.nota
             }
             arr_ordenes.append(arr)
 

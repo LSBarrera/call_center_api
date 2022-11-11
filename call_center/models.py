@@ -52,9 +52,11 @@ class Orden(models.Model):
     TotalRedemptionsAvailablePerCoupon = models.IntegerField(default=0)
     TotalRedemptionsAvailablePerUser = models.IntegerField(default=0)
     #Campos personalizados
-    cliente = models.TextField()
+    cliente = models.TextField(null=True)
     empleado = models.CharField(max_length=200,null=False)
-    detalles = models.TextField()
+    telefono_cliente = models.CharField(max_length=100,null=False)
+    detalles = models.TextField(null=True)
+    nota = models.TextField(null=True)
     sucursal = models.CharField(max_length=200,null=False)
     recibido = models.BooleanField(default=False)
     fecha_recibido = models.DateTimeField(null=True)
